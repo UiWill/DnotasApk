@@ -1,0 +1,223 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/logo_nova_branca"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="36dp">
+
+        <!--
+               <TextView
+                   android:id="@+id/deactivateOption"
+                   style="@style/listItem"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:text="Desativar"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="1.0"
+                   app:layout_constraintStart_toStartOf="parent"
+                   tools:layout_editor_absoluteY="220dp" />
+       -->
+        <!--
+        <TextView
+            android:id="@+id/posTransactionOption"
+            style="@style/listItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Fazer uma Transação"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+ -->
+
+        <!--
+               <TextView
+                   android:id="@+id/listTransactionOption"
+                   style="@style/listItem"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="4dp"
+                   android:text="Listar Transações"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/textView2" />
+       -->
+        <!--
+                             <TextView
+                                 android:id="@+id/manageStoneCodeOption"
+                                 style="@style/listItem"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:text="Gerenciar Stone Codes"
+                                 app:layout_constraintEnd_toEndOf="parent"
+                                 app:layout_constraintHorizontal_bias="0.0"
+                                 app:layout_constraintStart_toStartOf="parent"
+                                 app:layout_constraintTop_toBottomOf="@+id/cancelTransactionsOption" />
+                     -->
+
+        <!--
+                <TextView
+                    android:id="@+id/posPrinterProvider"
+                    style="@style/listItem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Provider de Impressão"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/posValidateCardOption" />
+-->
+
+
+        <!-- Substitua com a imagem desejada -->
+        <!--
+                <TextView
+                    android:id="@+id/posValidateCardOption"
+                    style="@style/listItem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Validar pelo cartão"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="355dp" />
+                -->
+        <!--
+        <TextView
+            android:id="@+id/posMifareProvider"
+            style="@style/listItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Provider de Mifare"
+            tools:layout_editor_absoluteX="186dp"
+            tools:layout_editor_absoluteY="354dp" />
+        -->
+
+        <TextView
+            android:id="@+id/cancelTransactionsOption"
+            style="@style/listItem"
+            android:layout_width="264dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:text="Cancelar Transações com Erro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/posTransactionOption"
+            android:layout_width="105dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="436dp"
+            android:src="@drawable/vendas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cancelTransactionsOption"
+            android:background="@drawable/button_selector"
+            android:elevation="4dp"
+            android:scaleType="centerCrop"/>
+
+        <ImageButton
+            android:id="@+id/listTransactionOption"
+            android:layout_width="105dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="436dp"
+            android:background="@drawable/button_selector"
+            android:elevation="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/relatorio"
+            app:layout_constraintEnd_toStartOf="@+id/posMifareProvider"
+            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintStart_toEndOf="@+id/posTransactionOption"
+            app:layout_constraintTop_toBottomOf="@+id/cancelTransactionsOption" />
+
+        <ImageButton
+            android:id="@+id/posMifareProvider"
+            android:layout_width="105dp"
+            android:layout_height="86dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/button_selector"
+            android:elevation="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="Fazer transação"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/posTransactionOption"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver Notas"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintHorizontal_bias="0.412"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/listTransactionOption"
+            app:layout_constraintVertical_bias="0.833" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="Detectar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="54dp"
+            android:layout_height="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.815"
+            app:layout_constraintStart_toEndOf="@+id/cancelTransactionsOption"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mmm"
+            android:background="@drawable/button_selector"
+            android:elevation="4dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Fale Conosco"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.957"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+
+        <TextView
+            android:id="@+id/posPrinterProvider"
+            style="@style/listItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Provider de Impressão"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="134dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>

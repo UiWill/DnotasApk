@@ -1,0 +1,1 @@
+ C:\\ERP_SISTEMAS\\dnotas\\.dart_tool\\flutter_build\\15fe8808f20543a81cd7004da997657f\\native_assets.yaml: 

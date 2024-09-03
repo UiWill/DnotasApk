@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.BaseTransactionActivity">
+
+
+    <EditText
+        android:id="@+id/amountEditTextantigo"
+        android:layout_width="121dp"
+        android:layout_height="23dp"
+        android:hint="@string/transaction_enter_value"
+        android:inputType="numberDecimal"
+        android:textSize="18sp"
+        android:visibility="gone"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <RadioGroup
+        android:id="@+id/transactionTypeRadioGroup"
+        android:layout_width="379dp"
+        android:layout_height="43dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculatorLayout"
+        app:layout_constraintVertical_bias="0.904">
+
+        <RadioButton
+            android:id="@+id/radioDebit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/transaction_debit"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioCredit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/transaction_credit"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioVoucher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/transaction_voucher"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioPix"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/transaction_pix"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/stoneCodeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="92dp"
+        android:text="Stone Code"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup" />
+
+    <TextView
+        android:id="@+id/installmentsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="@string/transaction_no_installments"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/installmentsSpinner"
+        android:layout_width="112dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="136dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvResult"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/stoneCodeSpinner"
+        android:layout_width="165dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toEndOf="@+id/installmentsSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/stoneCodeTextView" />
+
+    <TextView
+        android:id="@+id/logTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/cancelTransactionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/cancel_transaction_button"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/installmentsSpinner" />
+
+
+    <CheckBox
+        android:id="@+id/captureTransactionCheckBox"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="20dp"
+        android:checked="true"
+        android:text="Capturar transação"
+        app:layout_constraintEnd_toStartOf="@+id/tvResult"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/calculatorLayout"
+        android:layout_width="393dp"
+        android:layout_height="339dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/border_low_dark"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/captureTransactionCheckBox">
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="94dp"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:layout_marginTop="8dp"
+            android:text="✖️"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/seven"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:layout_marginTop="4dp"
+            android:text="7"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/eight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clear" />
+
+        <Button
+            android:id="@+id/eight"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:text="8"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/nine"
+            app:layout_constraintStart_toEndOf="@+id/seven"
+            app:layout_constraintTop_toBottomOf="@+id/clear" />
+
+        <Button
+            android:id="@+id/nine"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:layout_marginTop="8dp"
+            android:text="9"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/plus"
+            app:layout_constraintStart_toEndOf="@+id/eight"
+            app:layout_constraintTop_toBottomOf="@+id/clear" />
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="46dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="12dp"
+            android:text="+"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clear" />
+
+        <Button
+            android:id="@+id/four"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:text="4"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/five"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seven" />
+
+        <Button
+            android:id="@+id/five"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:text="5"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/six"
+            app:layout_constraintStart_toEndOf="@+id/four"
+            app:layout_constraintTop_toBottomOf="@+id/eight" />
+
+        <Button
+            android:id="@+id/six"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:layout_marginTop="4dp"
+            android:text="6"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/minus"
+            app:layout_constraintStart_toEndOf="@+id/five"
+            app:layout_constraintTop_toBottomOf="@+id/nine" />
+
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="46dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="12dp"
+            android:text="-"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plus" />
+
+        <Button
+            android:id="@+id/one"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:layout_marginTop="4dp"
+            android:text="1"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/four" />
+
+        <Button
+            android:id="@+id/two"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:text="2"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/three"
+            app:layout_constraintStart_toEndOf="@+id/one"
+            app:layout_constraintTop_toBottomOf="@+id/five" />
+
+        <Button
+            android:id="@+id/three"
+            android:layout_width="63dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:text="3"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/multiply"
+            app:layout_constraintStart_toEndOf="@+id/two"
+            app:layout_constraintTop_toBottomOf="@+id/six" />
+
+        <Button
+            android:id="@+id/multiply"
+            android:layout_width="46dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="12dp"
+            android:text="*"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minus" />
+
+        <Button
+            android:id="@+id/zero"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="8dp"
+            android:text="0"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/one" />
+
+        <Button
+            android:id="@+id/zerozero"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="00"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@+id/zero"
+            app:layout_constraintTop_toBottomOf="@+id/two" />
+
+        <Button
+            android:id="@+id/sendTransactionButton"
+            android:layout_width="110dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="208dp"
+            android:backgroundTint="@color/stoneColorGreen500"
+            android:text="✔"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@+id/zerozero"
+            app:layout_constraintTop_toBottomOf="@+id/multiply" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="378dp" />
+
+        <TextView
+            android:id="@+id/amountEditText"
+            android:layout_width="210dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/clear"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="31dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:text="R$"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="175dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_espressao" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="4dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/tvResult"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_espressao"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/captureTransactionCheckBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
