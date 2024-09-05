@@ -28,6 +28,9 @@ import stone.providers.ActiveApplicationProvider;
 import stone.providers.DisplayMessageProvider;
 import stone.providers.ReversalProvider;
 import stone.utils.Stone;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
+import androidx.work.WorkRequest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.listTransactionOption).setOnClickListener(this);
         findViewById(R.id.posPrinterProvider).setOnClickListener(this);
         findViewById(R.id.posMifareProvider).setOnClickListener(this);
+        findViewById(R.id.imageButton2).setOnClickListener(this);
         //  findViewById(R.id.manageStoneCodeOption).setOnClickListener(this);
         // findViewById(R.id.posValidateCardOption).setOnClickListener(this);
         //  findViewById(R.id.displayMessageOption).setOnClickListener(this);
@@ -49,6 +53,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //  findViewById(R.id.deactivateOption).setOnClickListener(this);
         //  findViewById(R.id.transactionOption).setOnClickListener(this);
 
+        schedulePeriodicWork();
+    }
+
+    private void schedulePeriodicWork() {
+        // Cria um PeriodicWorkRequest para executar a cada 1 hora
+        PeriodicWorkRequest periodicWorkRequest =
+                new PeriodicWorkRequest.Builder(CancelTransactionsWorker.class, 1, TimeUnit.HOURS)
+                        .build();
+
+        // Enfileira o trabalho com WorkManager
+        WorkManager.getInstance(this).enqueue(periodicWorkRequest);
     }
 
     @Override
@@ -96,21 +111,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-            case R.id.cancelTransactionsOption:
-                final ReversalProvider reversalProvider = new ReversalProvider(this);
-                reversalProvider.setDialogMessage("Cancelando transações com erro");
-                reversalProvider.setConnectionCallback(new StoneCallbackInterface() {
-                    @Override
-                    public void onSuccess() {
-                        Toast.makeText(MainActivity.this, "Transações canceladas com sucesso", Toast.LENGTH_SHORT).show();
-                    }
+                case R.id.cancelTransactionsOption:
+                Toast.makeText(this, "Cancelamento de transações agendado para execução a cada hora.", Toast.LENGTH_SHORT).show();
+                break;
 
-                    @Override
-                    public void onError() {
-                        Toast.makeText(MainActivity.this, "Ocorreu um erro durante o cancelamento das tabelas: " + reversalProvider.getListOfErrors(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                reversalProvider.execute();
+                case R.id.imageButton2:
+                startActivity(new Intent(MainActivity.this, falecomnos.class));
                 break;
 
             default:
@@ -119,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // case R.id.manageStoneCodeOption:
             //     startActivity(new Intent(MainActivity.this, ManageStoneCodeActivity.class));
-            //     break;
+            //     break;   
 
             /*   case R.id.posValidateCardOption:
                     final PosValidateTransactionByCardProvider posValidateTransactionByCardProvider = new PosValidateTransactionByCardProvider(this);

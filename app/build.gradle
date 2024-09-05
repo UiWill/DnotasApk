@@ -60,4 +60,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4") // or latest version
     testImplementation "org.junit.vintage:junit-vintage-engine:5.7.1"
     implementation'net.objecthunter:exp4j:0.4.8'
+
+    // Adicione a dependência do WorkManager
+    def work_manager_version = "2.8.0" // Verifique a versão mais recente
+    implementation "androidx.work:work-runtime:$work_manager_version"
 }

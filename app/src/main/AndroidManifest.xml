@@ -54,6 +54,10 @@
         <activity
             android:name=".activities.ManageStoneCodeActivity"
             android:label="@string/title_activity_manage_stone_codes" />
+             <activity
+            android:name=".activities.falecomnos"
+            android:label="@string/title_falecomnos" />
+        
     </application>
 
 </manifest>

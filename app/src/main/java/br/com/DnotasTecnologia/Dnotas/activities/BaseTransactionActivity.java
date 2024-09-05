@@ -33,6 +33,8 @@ import stone.user.UserModel;
 import stone.utils.Stone;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 
 
 
@@ -52,6 +54,10 @@ public abstract class BaseTransactionActivity<T extends BaseTransactionProvider>
             soma,subtracao,multiplicacao,botao_limpar,ZeroZero;
 
      TextView txtExpressao,txtResultado;
+
+     String current = "";
+     NumberFormat numberFormat = new DecimalFormat("#,##");
+
 
 
     Dialog builder;
@@ -111,13 +117,6 @@ public abstract class BaseTransactionActivity<T extends BaseTransactionProvider>
                 txtResultado.setText("");
             }
         });
-
-
-
-
-       
-
-
 
 
     }
@@ -249,28 +248,56 @@ public abstract class BaseTransactionActivity<T extends BaseTransactionProvider>
         soma = findViewById(R.id.plus);
         multiplicacao = findViewById(R.id.multiply);
         subtracao = findViewById(R.id.minus);
-        txtExpressao = findViewById(R.id.txt_espressao);
-        txtResultado = findViewById(R.id.amountEditText);
+        txtExpressao = findViewById(R.id.amountEditText);
+        txtResultado = findViewById(R.id.txt_espressao);
     }
 
     public void AcrescentarUmaExpressao(String string, boolean limpar_dados) {
-        if (limpar_dados) {
-            txtResultado.setText("");
+        if (txtResultado.getText().equals("")) {
+            txtExpressao.setText(" ");
         }
 
-        // Obtém o texto atual
-        String currentText = txtResultado.getText().toString().replaceAll("[,.]", "");
+        if (limpar_dados) {
+            txtResultado.setText(" ");
+            txtExpressao.append(string);
 
-        // Concatena o novo número digitado
-        String newText = currentText + string;
-
-        // Converte o texto em um número e o formata
-        double number = Double.parseDouble(newText) / 100.0;
-        String formattedText = NumberFormat.getCurrencyInstance(new Locale("pt", "BR")).format(number);
-
-        // Atualiza o TextView com o número formatado
-        txtResultado.setText(formattedText);
+        } else {
+            txtExpressao.append(txtResultado.getText());
+            txtExpressao.append(string);
+            txtResultado.setText(" ");
+        }
+        formatarParaMoeda();
     }
+    private void formatarParaMoeda() {
+        try {
+            // Obtém o texto atual de txtExpressao.
+            String texto = txtExpressao.getText().toString();
+
+            // Remove caracteres não numéricos e converte o texto para um número inteiro (representando centavos).
+            String textoNumerico = texto.replaceAll("[^\\d]", ""); // Remove qualquer caractere que não seja número
+            if (textoNumerico.isEmpty()) {
+                txtExpressao.setText("0,00");
+                return;
+            }
+
+            // Converte o texto para um número inteiro representando centavos.
+            long centavos = Long.parseLong(textoNumerico);
+
+            // Cria uma instância de NumberFormat para formatar o número como moeda brasileira.
+            NumberFormat formatador = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+
+            // Converte os centavos para reais e formata o número.
+            double reais = centavos / 100.0;
+            String textoFormatado = formatador.format(reais);
+
+            // Atualiza o texto de txtExpressao com o formato de moeda.
+            txtExpressao.setText(textoFormatado);
+        } catch (NumberFormatException e) {
+            // Caso ocorra uma exceção de formatação, define o texto como "0,00".
+            txtExpressao.setText("0,00");
+        }
+    }
+
     @Override
     public void onClick(View view){
         switch (view.getId()){
