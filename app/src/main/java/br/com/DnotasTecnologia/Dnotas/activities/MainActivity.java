@@ -43,8 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.cancelTransactionsOption).setOnClickListener(this);
         findViewById(R.id.listTransactionOption).setOnClickListener(this);
         findViewById(R.id.posPrinterProvider).setOnClickListener(this);
-        findViewById(R.id.posMifareProvider).setOnClickListener(this);
+
         findViewById(R.id.imageButton2).setOnClickListener(this);
+        findViewById(R.id.optios).setOnClickListener(this);
         //  findViewById(R.id.manageStoneCodeOption).setOnClickListener(this);
         // findViewById(R.id.posValidateCardOption).setOnClickListener(this);
         //  findViewById(R.id.displayMessageOption).setOnClickListener(this);
@@ -105,9 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 customPosPrintProvider.execute();
                 break;
 
-            case R.id.posMifareProvider:
-                startActivity(new Intent(MainActivity.this, MifareActivity.class));
-                break;
+
 
 
 
@@ -117,6 +116,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 case R.id.imageButton2:
                 startActivity(new Intent(MainActivity.this, falecomnos.class));
+                break;
+
+                case R.id.optios:
+                startActivity(new Intent(MainActivity.this, Maisopcoes.class));
                 break;
 
             default:

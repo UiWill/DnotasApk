@@ -7,25 +7,14 @@
     tools:context=".activities.BaseTransactionActivity">
 
 
-    <EditText
-        android:id="@+id/amountEditTextantigo"
-        android:layout_width="121dp"
-        android:layout_height="23dp"
-        android:hint="@string/transaction_enter_value"
-        android:inputType="numberDecimal"
-        android:textSize="18sp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteY="140dp" />
-
-
     <RadioGroup
         android:id="@+id/transactionTypeRadioGroup"
         android:layout_width="379dp"
         android:layout_height="43dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="52dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -67,18 +56,17 @@
         android:id="@+id/stoneCodeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginTop="8dp"
+
         android:text="Stone Code"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/calculatorLayout"
+        tools:layout_editor_absoluteX="70dp" />
 
     <TextView
         android:id="@+id/installmentsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="300dp"
         android:text="@string/transaction_no_installments"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +77,7 @@
         android:layout_width="112dp"
         android:layout_height="25dp"
         android:layout_marginEnd="280dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/tvResult"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -98,11 +86,10 @@
         android:layout_width="165dp"
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.868"
         app:layout_constraintStart_toEndOf="@+id/installmentsSpinner"
         app:layout_constraintTop_toBottomOf="@+id/stoneCodeTextView" />
 
@@ -139,22 +126,21 @@
         android:text="Capturar transação"
         app:layout_constraintBottom_toTopOf="@+id/calculatorLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.921" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/calculatorLayout"
         android:layout_width="389dp"
         android:layout_height="368dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="156dp"
         android:background="@color/border_low_dark"
         android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup">
 
         <Button
             android:id="@+id/clear"
@@ -430,7 +416,7 @@
         android:id="@+id/tvResult"
         android:layout_width="175dp"
         android:layout_height="27dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="236dp"
         android:gravity="center"
         android:text=""

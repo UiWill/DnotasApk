@@ -14,6 +14,7 @@
     <string name="main_list_description">Listar todas as transações do banco</string>
     <string name="title_activity_transaction">Fazer transação</string>
     <string name="title_falecomnos">Enviar email</string>
+    <string name="title_activity_opcoes">Mais Opções</string>
     <string name="title_activity_devices">Dispositivos pareados</string>
     <string name="title_activity_transaction_list">Lista de transações</string>
     <string name="title_activity_validation">Stone SDK Demo</string>

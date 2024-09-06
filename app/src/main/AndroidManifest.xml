@@ -57,6 +57,9 @@
              <activity
             android:name=".activities.falecomnos"
             android:label="@string/title_falecomnos" />
+            <activity
+            android:name=".activities.Maisopcoes"
+            android:label="@string/title_activity_opcoes" />
         
     </application>
 
