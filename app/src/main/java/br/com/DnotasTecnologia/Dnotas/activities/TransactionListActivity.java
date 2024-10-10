@@ -31,6 +31,8 @@ import stone.providers.SendEmailTransactionProvider;
 import stone.repository.remote.email.pombo.email.Contact;
 import stone.utils.PrintObject;
 import stone.utils.Stone;
+import java.text.DecimalFormat;
+
 
 public class TransactionListActivity extends AppCompatActivity implements OnItemClickListener {
 
@@ -43,25 +45,34 @@ public class TransactionListActivity extends AppCompatActivity implements OnItem
 
         listView = findViewById(R.id.listTransactionActivity);
 
+
         // acessa todas as transacoes do banco de dados
         TransactionDAO transactionDAO = new TransactionDAO(getApplicationContext());
         // cria uma lista com todas as transacoes
         transactionObjects = transactionDAO.getAllTransactionsOrderByIdDesc();
 
-        // exibe todas as transações (neste caso valor e status) para o usuario
-        String[] rowOfList = new String[transactionObjects.size()];
-        for (int i = 0; i < transactionObjects.size(); i++) {
-            rowOfList[i] = String.format("%s=%s\n%s", transactionObjects.get(i).getIdFromBase(), transactionObjects.get(i).getAmount(), transactionObjects.get(i).getTransactionStatus());
-        }
+        // Exibe todas as transações (neste caso valor e status) para o usuário
+    String[] rowOfList = new String[transactionObjects.size()];
+    DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
+
+    for (int i = 0; i < transactionObjects.size(); i++) {
+        // Aqui, converte o valor de centavos para reais e formata corretamente
+        double amountInReais = Double.parseDouble(transactionObjects.get(i).getAmount()) / 100.0;
+        String formattedAmount = decimalFormat.format(amountInReais);
+        
+        // Cria a string no formato "id=valor,status"
+        rowOfList[i] = String.format("%s=%s\n%s", transactionObjects.get(i).getIdFromBase(), formattedAmount, transactionObjects.get(i).getTransactionStatus());
+    }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, rowOfList);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
-    }
+
+
+   }
 
     public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
         final TransactionObject selectedTransaction = transactionObjects.get(position);
         ArrayList<String> optionsList = new ArrayList<String>() {{
-            add("[Pinpad] Imprimir comprovante");
             add("[POS] Imprimir via do estabelecimento");
             add("[POS] Imprimir via do cliente");
             add("[POS] Imprimir comprovante customizado");
@@ -119,7 +130,7 @@ public class TransactionListActivity extends AppCompatActivity implements OnItem
                                 printReceipt(ReceiptType.CLIENT, selectedTransaction);
                                 break;
 
-                            case 3:
+                            case 4:
                                 // Impressão customizada
                                 final PosPrintProvider customPosPrintProvider = new PosPrintProvider(TransactionListActivity.this);
                                 customPosPrintProvider.addLine("Stone");
@@ -146,7 +157,7 @@ public class TransactionListActivity extends AppCompatActivity implements OnItem
                                 customPosPrintProvider.execute();
                                 break;
 
-                            case 4:
+                            case 3:
                                 final CancellationProvider cancellationProvider = new CancellationProvider(TransactionListActivity.this, selectedTransaction);
                                 cancellationProvider.setDialogMessage("Cancelando...");
                                 cancellationProvider.setConnectionCallback(new StoneCallbackInterface() { // chamada de retorno.

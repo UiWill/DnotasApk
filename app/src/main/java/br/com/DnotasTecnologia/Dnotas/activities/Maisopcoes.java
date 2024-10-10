@@ -44,6 +44,7 @@ public class Maisopcoes extends AppCompatActivity implements View.OnClickListene
      findViewById(R.id.posMifareProvider).setOnClickListener(this);
      findViewById(R.id.cancelTransactionsOption).setOnClickListener(this);
      findViewById(R.id.posPrinterProvider).setOnClickListener(this);
+     findViewById(R.id.solicitarcupom).setOnClickListener(this);
     }
 
     @Override
@@ -137,7 +138,12 @@ public class Maisopcoes extends AppCompatActivity implements View.OnClickListene
 
             case R.id.posMifareProvider:
                 startActivity(new Intent(Maisopcoes.this, MifareActivity.class));
-                break;  
+                break;
+
+
+            case R.id.solicitarcupom:
+                startActivity(new Intent(Maisopcoes.this, CupomActivity.class));
+                break;
 
             default:
             break;

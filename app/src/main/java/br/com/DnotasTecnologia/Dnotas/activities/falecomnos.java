@@ -1,6 +1,7 @@
 package br.com.DnotasTecnologia.Dnotas.activities;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -32,21 +33,21 @@ import stone.providers.BaseTransactionProvider;
 import stone.user.UserModel;
 import stone.utils.Stone;
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.Locale;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 
 
 
-public class falecomnos extends AppCompatActivity  {
+public class falecomnos extends AppCompatActivity {
 
     private EditText problemDescription;
     private EditText emailInput;
-    private EditText passwordInput;
     private Button sendReportButton;
 
-
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Associa o layout XML ao código da Activity
@@ -55,7 +56,37 @@ public class falecomnos extends AppCompatActivity  {
         // Inicializa os componentes da interface
         problemDescription = findViewById(R.id.problemDescription);
         emailInput = findViewById(R.id.editTextTextEmailAddress);
-        passwordInput = findViewById(R.id.editTextNumberPassword);
         sendReportButton = findViewById(R.id.sendReportButton);
+
+        // Adiciona o clique ao botão
+        sendReportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Pega o conteúdo do formulário
+               
+                String subject =  emailInput.getText().toString();
+                String content = problemDescription.getText().toString();
+                String to_email = "suporte@dnotas.com.br";
+
+                // Verifica se os campos estão preenchidos
+                if (!subject.isEmpty() && !content.isEmpty()) {
+                    // Chama o método para enviar o e-mail
+                    sendEmail(subject, content, to_email);
+                } else {
+                    // Exibe uma mensagem de erro se os campos estiverem vazios
+                    Toast.makeText(falecomnos.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    // Método para enviar o e-mail
+    public void sendEmail(String subject, String content, String to_email) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{to_email});
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, content);
+        intent.setType("message/rfc822");
+        startActivity(Intent.createChooser(intent, "Escolha um cliente de e-mail:"));
     }
 }

@@ -9,12 +9,12 @@
 
     <RadioGroup
         android:id="@+id/transactionTypeRadioGroup"
-        android:layout_width="379dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="372dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -56,40 +56,40 @@
         android:id="@+id/stoneCodeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
 
+        android:layout_marginTop="160dp"
         android:text="Stone Code"
         app:layout_constraintTop_toBottomOf="@+id/calculatorLayout"
-        tools:layout_editor_absoluteX="70dp" />
+        tools:layout_editor_absoluteX="25dp" />
 
     <TextView
         android:id="@+id/installmentsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="300dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="@string/transaction_no_installments"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup" />
 
     <Spinner
         android:id="@+id/installmentsSpinner"
-        android:layout_width="112dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvResult"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_width="195dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/installmentsTextView" />
 
     <Spinner
         android:id="@+id/stoneCodeSpinner"
         android:layout_width="165dp"
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/installmentsSpinner"
         app:layout_constraintTop_toBottomOf="@+id/stoneCodeTextView" />
 
@@ -122,50 +122,56 @@
         android:id="@+id/captureTransactionCheckBox"
         android:layout_width="160dp"
         android:layout_height="25dp"
+        android:layout_marginTop="4dp"
         android:checked="true"
         android:text="Capturar transação"
-        app:layout_constraintBottom_toTopOf="@+id/calculatorLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup"
-        app:layout_constraintVertical_bias="0.921" />
+        app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup" />
+
+    <CheckBox
+        android:id="@+id/captureItens"
+        android:layout_width="140dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="20dp"
+        android:checked="true"
+        android:text="Capturar Itens"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/captureTransactionCheckBox" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/calculatorLayout"
-        android:layout_width="389dp"
-        android:layout_height="368dp"
-        android:layout_marginTop="156dp"
+        android:layout_width="370dp"
+        android:layout_height="314dp"
+        android:layout_marginBottom="4dp"
         android:background="@color/border_low_dark"
         android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transactionTypeRadioGroup">
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/clear"
-            android:layout_width="99dp"
-            android:layout_height="55dp"
-            android:layout_margin="4dp"
-            android:layout_marginTop="4dp"
-            android:backgroundTint="#4F5D73"
-
+            android:layout_width="77dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/black"
             android:text="✖"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:cornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.971"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/seven"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="7"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -176,11 +182,11 @@
 
         <Button
             android:id="@+id/eight"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="8"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -191,12 +197,12 @@
 
         <Button
             android:id="@+id/nine"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="9"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -219,11 +225,11 @@
 
         <Button
             android:id="@+id/four"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="4"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -234,11 +240,11 @@
 
         <Button
             android:id="@+id/five"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="5"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -249,12 +255,12 @@
 
         <Button
             android:id="@+id/six"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="6"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -277,12 +283,12 @@
 
         <Button
             android:id="@+id/one"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="1"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -293,12 +299,12 @@
 
         <Button
             android:id="@+id/two"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="2"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -309,11 +315,11 @@
 
         <Button
             android:id="@+id/three"
-            android:layout_width="63dp"
-            android:layout_height="65dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_margin="4dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="3"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -336,46 +342,48 @@
 
         <Button
             android:id="@+id/zero"
-            android:layout_width="63dp"
-            android:layout_height="63dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="0"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:cornerRadius="15dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/one" />
 
         <Button
             android:id="@+id/zerozero"
-            android:layout_width="63dp"
-            android:layout_height="63dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#4F5D73"
+            android:backgroundTint="@color/black"
             android:text="00"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/zero"
-            app:layout_constraintTop_toBottomOf="@+id/two" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/zero" />
 
         <Button
             android:id="@+id/sendTransactionButton"
-            android:layout_width="110dp"
-            android:layout_height="69dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="216dp"
+            android:layout_width="107dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#4CAF50"
             android:text="✔"
             android:textSize="24sp"
             app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/zerozero"
-            app:layout_constraintTop_toBottomOf="@+id/multiply" />
+            app:layout_constraintTop_toBottomOf="@+id/three"
+            app:layout_constraintVertical_bias="0.111" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -388,14 +396,12 @@
             android:id="@+id/amountEditText"
             android:layout_width="192dp"
             android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text=""
             android:textColor="@color/black"
             android:textSize="24sp"
-            app:layout_constraintEnd_toStartOf="@+id/clear"
-            app:layout_constraintHorizontal_bias="0.375"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -407,23 +413,22 @@
             android:text="R$"
             android:textColor="@color/black"
             android:textSize="24sp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/Additens"
+            android:layout_width="60dp"
+            android:layout_height="52dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#4CAF50"
+            android:text="add"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/clear"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="175dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="236dp"
-        android:gravity="center"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_espressao" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView10"
@@ -451,12 +456,64 @@
         android:id="@+id/textView3"
         android:layout_width="164dp"
         android:layout_height="26dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="sans-serif"
         android:text="Forma de Pagamento:"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/transactionTypeRadioGroup"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@+id/txt_espressao"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="175dp"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <ListView
+        android:id="@+id/painel"
+        android:layout_width="366dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="36dp"
+        android:padding="1px"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/captureTransactionCheckBox" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="Valor Total da venda:"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/painel" />
+
+    <Button
+        android:id="@+id/cancelar"
+        android:layout_width="158dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="sans-serif"
+        android:text="Cancelar transação"
+        android:visibility="gone"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/captureTransactionCheckBox" />
+    [
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

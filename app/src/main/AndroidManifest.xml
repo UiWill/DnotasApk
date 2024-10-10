@@ -60,6 +60,14 @@
             <activity
             android:name=".activities.Maisopcoes"
             android:label="@string/title_activity_opcoes" />
+        <activity
+            android:name=".activities.Add_produtos"
+            android:label="@string/title_comidas" />
+
+        <activity
+            android:name=".activities.CupomActivity"
+            android:label="@string/Solicitar_cupom" />
+
         
     </application>
 

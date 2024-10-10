@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Add_produtos">
+
+    <!-- Seção de Comidas -->
+
+    <!-- Imagem Pão Francês -->
+
+    <!-- Imagem Croissant -->
+
+    <!-- Imagem Queijo -->
+
+    <!-- Imagem Geleia -->
+
+    <!-- Imagem Bolos -->
+
+    <!-- Imagem Pudim -->
+
+    <!-- Seção de Bebidas -->
+
+    <!-- Imagem Café -->
+
+    <!-- Imagem Leite -->
+
+    <!-- Imagem Suco de Laranja -->
+
+
+    <ImageView
+        android:id="@+id/pao"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="Imagem de Pão Francês"
+        android:src="@drawable/pao"
+        app:layout_constraintBottom_toTopOf="@+id/gel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/cro"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="28dp"
+        android:contentDescription="Imagem de Croissant"
+        android:src="@drawable/croissant"
+        app:layout_constraintBottom_toTopOf="@+id/bol"
+        app:layout_constraintEnd_toStartOf="@+id/que"
+        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintStart_toEndOf="@+id/pao" />
+
+    <ImageView
+        android:id="@+id/que"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:contentDescription="Imagem de Queijo"
+        android:src="@drawable/queijo"
+        app:layout_constraintBottom_toTopOf="@+id/pud"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/gel"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Imagem de Geleia"
+        android:src="@drawable/geleias"
+        app:layout_constraintBottom_toTopOf="@+id/caf"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/bol"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Imagem de Bolos"
+        android:src="@drawable/bolos"
+        app:layout_constraintBottom_toTopOf="@+id/cap"
+        app:layout_constraintEnd_toStartOf="@+id/pud"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/gel" />
+
+    <ImageView
+        android:id="@+id/pud"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Imagem de Pudim"
+        android:src="@drawable/pudin"
+        app:layout_constraintBottom_toTopOf="@+id/exp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/caf"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="Imagem de Café"
+        android:src="@drawable/cafe"
+        app:layout_constraintBottom_toTopOf="@+id/lei"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/lei"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Imagem de Leite"
+        android:src="@drawable/leite"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/suc"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Imagem de Suco de Laranja"
+        android:src="@drawable/suco_laranja"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vit"
+        app:layout_constraintStart_toEndOf="@+id/lei" />
+
+    <ImageView
+        android:id="@+id/vit"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Imagem de Suco de Laranja"
+        android:src="@drawable/vitamina"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/exp"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="Imagem de Suco de Laranja"
+        android:src="@drawable/expresso"
+        app:layout_constraintBottom_toTopOf="@+id/vit"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/cap"
+        android:layout_width="117dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="Imagem de Suco de Laranja"
+        android:src="@drawable/capp"
+        app:layout_constraintBottom_toTopOf="@+id/suc"
+        app:layout_constraintEnd_toStartOf="@+id/exp"
+        app:layout_constraintStart_toEndOf="@+id/caf" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="4dp"
+        android:text="Pães"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/pao"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="4dp"
+        android:text="Croissant"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cro"
+        app:layout_constraintEnd_toStartOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:text="Queijo"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/que"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:text="Geleias"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/gel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:text="Bolos"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bol"
+        app:layout_constraintEnd_toStartOf="@+id/pud" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:text="Pudin"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/pud"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:text="Café"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/caf"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Cappucino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Cappucino"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cap"
+        app:layout_constraintEnd_toStartOf="@+id/exp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="Café Expresso"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/exp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:text="Leite"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/lei"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:gravity="center"
+        android:text="Sucos"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/suc"
+        app:layout_constraintEnd_toStartOf="@+id/textView23" />
+
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:text="Vitaminas"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/vit"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
